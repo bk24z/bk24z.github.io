@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --header-color: #fe6565;
+    --section-color: #0c4b9d;
+    --text-color: #ffffff;
+    --button-hover-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+}
+
+header, section {
+    margin: 2em auto;
+    width: min(75em, 100%);
+    background-color: var(--header-color);
+    padding: min(2em, 15%);
+    border-radius: 1em;
+}
+
+nav {
+    margin: 1em auto 3em auto;
+    width: min(1000px, 100%);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 2em;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+nav a:hover {
+    color: var(--section-color);
+}
+
+.flex-container {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 1em;
+    object-fit: cover;
+    object-position: center;
+}
+
+.text-container {
+    flex: 0 1 34em;
+}
+
+.text-container p {
+    margin: .75em 0 1em 0;
+    font-size: 1.25rem;
+}
+
+.download-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--section-color);
+    padding: .75em 1.5em;
+    border-radius: .5em;
+}
+
+.download-btn:hover {
+    background-color: var(--button-hover-color);
+}
