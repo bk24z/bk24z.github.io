@@ -33,13 +33,6 @@ nav {
     justify-content: center
 }
 
-hr {
-    color: #000;
-    background-color: #000;
-    height: 10px;
-    width: 10px;
-}
-
 #nav-logo {
     margin: 10px;
     font-family: "Finger Paint", sans-serif;
@@ -84,7 +77,7 @@ main {
 }
 
 #username-heading {
-    font: 2em sans-serif;
+    font-size: 2em;
     font-family: "Finger Paint", sans-serif;
     /* transform: translateY(0.5rem); */
 }
@@ -173,31 +166,3 @@ main {
         align-items: inherit;
     }
 }
-
-/* nav a:hover {
-    color: var(--section-color);
-} */
-
-/* img {
-    max-width: 100%;
-    border-radius: 1em;
-    object-fit: cover;
-    object-position: center;
-}
-
-.text-container {
-    flex: 0 1 34em;
-}
-
-.download-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--text-color);
-    background-color: var(--section-color);
-    padding: .75em 1.5em;
-    border-radius: .5em;
-}
-
-.download-btn:hover {
-    background-color: var(--button-hover-color);
-} */
