@@ -105,6 +105,13 @@ main {
     color: black;
     white-space: nowrap;
     font-size: 0.9rem;
+    transition: 0.1s ease-in-out;
+}
+
+#links a:hover {
+    background-color: #333;
+    color: white;
+    transition: 0.1s ease-in-out;
 }
 
 #photos {
