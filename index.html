@@ -7,12 +7,11 @@
     <title>Bradley / bk24z</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/ff5b4da3a4.js" crossorigin="anonymous"></script>
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?"> -->
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png?">
 </head>
 
 <body>
-    <main>
+    <header>
         <div id="photos-container">
             <img id="irl-photo" src="assets/irl-photo.jpeg" alt="Picture of Bradley">
             <img id="mii-photo" src="assets/mii-photo.png" alt="Picture of Bradley's Mii character">
@@ -47,7 +46,15 @@
                 </a>
             </div>
         </div>
+        <i id="scroll-indicator" class="fa-solid fa-angle-down"></i>
+    </header>
+    <main>
+        <section id="projects-section">
+            <h2>Projects</h2>
+            <div id="project-cards-container"></div>
+        </section>
     </main>
+    <script src="index.js"></script>
 </body>
 
 </html>
