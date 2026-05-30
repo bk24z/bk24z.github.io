@@ -144,18 +144,12 @@ header {
     color: var(--text);
     white-space: nowrap;
     font-size: 0.9rem;
-    transition: 0.1s ease-in-out;
+    transition: border 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 
-#links a:hover {
+#links a:hover, #links a:focus {
     border: 2px solid var(--accent);
     color: var(--accent);
-    transition: 0.1s ease-in-out;
-}
-
-#photos-container {
-    display: flex;
-    align-items: flex-start;
 }
 
 #irl-photo, #mii-photo {
@@ -209,13 +203,8 @@ section h2 {
 
 /* Projects */
 
-#projects-section {
-
-}
-
 #project-cards-container {
     width: 100%;
-    /*max-width: 1200px;*/
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -224,6 +213,7 @@ section h2 {
 }
 
 .project-card {
+    opacity: 0;
     display: flex;
     flex: 0 0 auto;
     flex-direction: column;
@@ -231,7 +221,6 @@ section h2 {
     align-items: center;
     width: 100%;
     max-width: 300px;
-    /*padding: calc(1rem + 2px) 1rem 1rem;*/
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border);
@@ -239,9 +228,19 @@ section h2 {
     color: var(--text);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     gap: 0.5rem;
-    animation: swing-in 1s cubic-bezier(0.3, 0.6, 0.4, 1) forwards;
     transform-origin: top center;
     text-align: center;
+    transition: border 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.project-card.show {
+    opacity: 1;
+    animation: swing-in 1s cubic-bezier(0.3, 0.6, 0.4, 1);
+}
+
+.project-card:hover {
+    border: 1px solid var(--accent);
+    transform: translateY(-2px);
 }
 
 .project-card h3 {
@@ -253,13 +252,11 @@ section h2 {
         transform: rotate(-16deg);
         opacity: 0;
     }
-    14% {
-        opacity: 1;
-    }
     30% {
         transform: rotate(8deg);
     }
     46% {
+        opacity: 1;
         transform: rotate(-4.5deg);
     }
     60% {
@@ -296,12 +293,11 @@ section h2 {
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    transition: 0.1s ease-in-out;
+    transition: color 0.1s ease-in-out;
 }
 
 .project-card a:hover {
     color: var(--accent);
-    transition: 0.1s ease-in-out;
 }
 
 .project-card p {

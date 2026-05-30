@@ -1,5 +1,14 @@
 const projectCardsContainer = document.getElementById("project-cards-container");
 
+const projectCardsObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            projectCardsObserver.unobserve(entry.target);
+        }
+    })
+}, { threshold: 0.3 })
+
 async function getRepos() {
     const response = await fetch("https://api.github.com/users/bk24z/repos");
     if (!response.ok) throw new Error(`Response status: ${response.status}`);
@@ -44,6 +53,7 @@ async function displayRepos() {
             link.append(linkIcon, "View on GitHub");
             projectCard.append(img, name, languagesContainer, description, link)
             projectCardsContainer.appendChild(projectCard);
+            projectCardsObserver.observe(projectCard)
         })
     } catch (error) {
         console.error("Error fetching repos:", error);
