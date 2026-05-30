@@ -19,27 +19,30 @@ async function displayRepos() {
         reposToDisplay.forEach(repo => {
             const projectCard = document.createElement("div");
             projectCard.classList.add("project-card");
+            const img = document.createElement("img");
+            img.src = `https://socialify.git.ci/bk24z/${repo.name}/image?font=JetBrains+Mono&language=1&name=1&owner=1&stargazers=1&theme=Dark`;
             const name = document.createElement("h3");
             name.textContent = repo.name;
             const languagesContainer = document.createElement("div");
             languagesContainer.classList.add("languages-container");
-            getRepoLanguages(repo.name).then(languages => {
-                Object.keys(languages).forEach(language => {
-                    const languageBadge = document.createElement("span");
-                    languageBadge.textContent = language;
-                    languagesContainer.appendChild(languageBadge);
+            getRepoLanguages(repo.name)
+                .then(languages => {
+                    Object.keys(languages).forEach(language => {
+                        const languageBadge = document.createElement("span");
+                        languageBadge.textContent = language;
+                        languagesContainer.appendChild(languageBadge);
+                    })
                 })
-            })
+                .catch(error => console.error(`Error fetching languages for ${repo.name}:`, error));
             const description = document.createElement("p");
             description.textContent = repo.description;
             const link = document.createElement("a");
             link.href = repo.html_url;
             link.target = "_blank";
-            link.textContent = "View Project";
             const linkIcon = document.createElement("i");
-            linkIcon.className = 'fa-solid fa-chevron-right';
-            link.appendChild(linkIcon);
-            projectCard.append(name, languagesContainer, description, link)
+            linkIcon.className = "fa-brands fa-github";
+            link.append(linkIcon, "View on GitHub");
+            projectCard.append(img, name, languagesContainer, description, link)
             projectCardsContainer.appendChild(projectCard);
         })
     } catch (error) {
